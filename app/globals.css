@@ -1,8 +1,35 @@
 @import "tailwindcss";
 
+/* largura */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* fundo */
+::-webkit-scrollbar-track {
+  background: #e5e7eb; /* cinza */
+}
+
+/* barra */
+::-webkit-scrollbar-thumb {
+  background-color: #DB4444; /* vermelho */
+  border-radius: 20px;
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #dc2626;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari */
 }
 
 @theme inline {
@@ -23,4 +50,52 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* colors */
+.bg-red-10 {
+  background-color: #DB4444;
+}
+
+.text-red-10 {
+  color: #DB4444;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
 }
