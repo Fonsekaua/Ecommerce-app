@@ -1,8 +1,4 @@
-import {Index as Arrow} from '@/src/components/SpanIconArrow'
 import { Props } from '@/src/types/Title'
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
-
-
 
 export function Index({ text, subtext, previous, next }: Props) {
   return (
@@ -15,14 +11,8 @@ export function Index({ text, subtext, previous, next }: Props) {
       <div className="w-full flex items-center justify-between">
         <h1 className="text-4xl font-semibold">{subtext}</h1>
 
-        <div className="flex items-center gap-5">
-          <button onClick={previous} aria-label="Previous">
-            <Arrow Icon={FaArrowLeft} />
-          </button>
-
-          <button onClick={next} aria-label="Next">
-            <Arrow Icon={FaArrowRight} />
-          </button>
+        <div className="flex w-40 h-14 rounded-sm items-center justify-center bg-red-10 text-white font-medium">
+            View All
         </div>
       </div>
     </div>

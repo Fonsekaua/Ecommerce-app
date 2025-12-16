@@ -1,30 +1,36 @@
+'use client'
 import { Index as Line } from '@/src/components/Line'
-import { FaApple, FaArrowRight } from 'react-icons/fa'
-import {Index as Title} from '@/src/components/Title'
-import {Index as Card} from '@/src/components/CardsProducts'
+import { FaApple, FaArrowRight, FaCamera, FaGamepad, FaHeadphones, FaPhone } from 'react-icons/fa'
+import { Index as ListCard } from '@/src/components/ListProduct'
+import { Index as ListCategory } from '@/src/components/ListCategory'
+import { Index as ListCardCompact } from '@/src/components/ListProductCompact'
+
+
 import { products } from '@/src/data/product'
+import { FaComputer } from 'react-icons/fa6'
+import { BsSmartwatch } from 'react-icons/bs'
 export default function HomePage() {
     return (
-      <>
-        <section className="container flex mb-20 justify-between items-start h-fit ">
-            <nav className='border-r-[1px] w-[15rem] border-gray-300 pt-8 pr-15'>
-                <ul className='w-fit flex flex-col items-start gap-2'>
-                    <Line text={[
-                        "Woman’s Fashion",
-                        "Men’s Fashion",
-                        "Electronics",
-                        "Home & Lifestyle",
-                        "Medicine",
-                        "Sports & Outdoor",
-                        "Baby’s & Toys",
-                        "Groceries & Pets",
-                        "Health & Beauty"
-                    ]} />
-                </ul>
-            </nav>
-            <div className="mt-8 ml-15 flex-1">
-                <div className='bg-black flex justify-around rounded-sm'>
-                    <div className='text-white flex flex-col justify-center gap-10'>
+        <>
+            <section className="container flex mb-20 justify-between items-start h-fit ">
+                <nav className='border-r-[1px] w-[15rem] border-gray-300 pt-8 pr-15'>
+                    <ul className='w-fit flex flex-col items-start gap-2'>
+                        <Line text={[
+                            "Woman’s Fashion",
+                            "Men’s Fashion",
+                            "Electronics",
+                            "Home & Lifestyle",
+                            "Medicine",
+                            "Sports & Outdoor",
+                            "Baby’s & Toys",
+                            "Groceries & Pets",
+                            "Health & Beauty"
+                        ]} />
+                    </ul>
+                </nav>
+                <div className="mt-8 ml-15 flex-1">
+                    <div className='bg-black flex justify-around rounded-sm'>
+                        <div className='text-white flex flex-col justify-center gap-10'>
                             <span className='text-gray-300 flex items-center'>
                                 <FaApple size={50} color='white' />
                                 <p className='text-lg'>iPhone 14 series</p>
@@ -40,21 +46,33 @@ export default function HomePage() {
                             </span>
                         </div>
 
-                    <img src="./banner/banner-01.png" alt="" />
+                        <img src="./banner/banner-01.png" alt="" />
 
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section className='container'>
-            <div className='flex flex-col gap-6'>
-                    <Title text='Today´s' subtext="Flash Sales" />
-                    <Card data={products} />
-                        <button className='self-center w-60 flex items-center capitalize text-lg text-white font-medium rounded-lg cursor-pointer  justify-center h-16 mt-10 bg-red-10'>
-                            view all products
-                        </button>
-                    
-            </div>
-        </section>
-      </>
+            </section>
+            <ListCard title={{ text: "Today’s", subtext: "Flash Sales" }} products={products} />
+            <ListCategory
+                title={{
+                    text: "Categories",
+                    subtext: "Browse By Category"
+                }}
+                category={[
+                    { name: "Phones", Icon: FaPhone },
+                    { name: "Computers", Icon: FaComputer },
+                    { name: "SmartWatches", Icon: BsSmartwatch },
+                    { name: "Camera", Icon: FaCamera },
+                    { name: "Headphones", Icon: FaHeadphones },
+                    { name: "Gaming", Icon: FaGamepad },
+                    { name: "Phones", Icon: FaPhone },
+                    { name: "Computers", Icon: FaComputer },
+                    { name: "SmartWatches", Icon: BsSmartwatch },
+                    { name: "Camera", Icon: FaCamera },
+                    { name: "Headphones", Icon: FaHeadphones },
+                    { name: "Gaming", Icon: FaGamepad }
+                ]} />
+                <ListCardCompact title={{ text: "Today’s", subtext: "Flash Sales" }} products={products} />
+
+        </>
     )
 }
