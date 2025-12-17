@@ -22,7 +22,7 @@ export function Header() {
 
             <header className="border-b-[1px] border-gray-300 w-full p-4 pt-8">
                 <section className="container flex items-center justify-between">
-                    <h1 className="text-3xl font-bold cursor-pointer">Exclusive</h1>
+                    <img src="/logo.svg" alt="" />
 
                     <nav>
                         <ul className="flex items-center gap-4 text-lg">

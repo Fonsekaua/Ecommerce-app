@@ -1,8 +1,6 @@
 import { Props } from '@/src/types/Title'
-import { useState } from 'react'
 
-export function Index({ text, subtext, previous, next }: Props) {
-  const [state, setState] = useState(false)
+export function Index({ text, subtext }: Props) {
   return (
     <div className="flex flex-col items-start gap-5">
       <div className="text-red-10 font-semibold text-lg flex items-center gap-5">
@@ -12,10 +10,6 @@ export function Index({ text, subtext, previous, next }: Props) {
 
       <div className="w-full flex items-center justify-between">
         <h1 className="text-4xl font-semibold">{subtext}</h1>
-
-        <button onMouseOut={()=> setState(false)} onMouseOver={()=> setState(true)} className={`capitalize cursor-pointer flex w-40 h-14 rounded-sm items-center justify-center ${state?"bg-[#DB4444]/80":"bg-red-10"} text-white font-medium`}>
-            View All
-        </button>
       </div>
     </div>
   )

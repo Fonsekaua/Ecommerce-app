@@ -2,6 +2,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { Index as Title } from './../Title'
 import { Index as Card } from '../Card'
 import { Props as product } from '@/src/types/CardProduct'
+import { useState } from 'react'
     type Props = {
         title: {
             text: string
@@ -10,6 +11,7 @@ import { Props as product } from '@/src/types/CardProduct'
         products: product[]
     }
 export function Index({ title, products }: Props) {
+  const [state, setState] = useState(false)
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false })
     return (
@@ -30,7 +32,7 @@ export function Index({ title, products }: Props) {
                         }
                     </div>
                 </div>
-                <button className='self-center w-60 flex items-center capitalize text-lg text-white font-medium rounded-lg cursor-pointer  justify-center h-16 mt-10 bg-red-10'>
+                <button onMouseOut={()=> setState(false)} onMouseOver={()=> setState(true)}  className={`self-center w-60 flex items-center capitalize text-lg text-white font-medium rounded-lg cursor-pointer  justify-center h-16 mt-10  ${state?"bg-[#DB4444]/80":"bg-red-10"} `}>
                     view all products
                 </button>
             </div>

@@ -70,6 +70,36 @@ body {
   margin-left: auto;
 }
 
+
+/* Display Grid */
+@layer utilities {
+  .grid-layout{
+    display: grid;
+    grid-template-areas:
+      'first first second second'
+      'first first third fourth'
+    ;
+  }
+  .area-first{
+    grid-area: first;
+    height: 37.5rem;
+  }
+  .area-second{
+    grid-area: second;
+    height: 17.7rem;
+  }
+  .area-third{
+    grid-area: third;
+     height: 17.7rem;
+  }
+  .area-fourth{
+    grid-area: fourth;
+     height: 17.7rem;
+  }
+}
+
+
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
