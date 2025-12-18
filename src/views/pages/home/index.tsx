@@ -77,7 +77,7 @@ export default function HomePage() {
             <BannerDiscont />
             <ListCardNotCompact title={{ text: "Our Products", subtext: "Explore Our Products" }} products={products} />
             <NewArival title={{ text: 'Featured', subtext: 'New Arrival' }} />
-            <section className='container flex items-center justify-around '>
+            <section className='container flex items-center justify-around pb-32'>
                 <Services Icon={FaTruckFast} title={'FREE AND FAST DELIVERY'} subtitle='Free delivery for all orders over $140' />
                 <Services Icon={BsHeadset} title='24/7 CUSTOMER SERVICE' subtitle='Friendly 24/7 customer support' />
                 <Services Icon={BsShieldCheck} title='MONEY BACK GUARANTEE' subtitle='We reurn money within 30 days' />
