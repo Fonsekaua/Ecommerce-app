@@ -1,6 +1,6 @@
 'use client'
 import { Index as Line } from '@/src/components/Line'
-import { FaApple, FaArrowRight, FaCamera, FaGamepad, FaHeadphones, FaPhone } from 'react-icons/fa'
+import { FaApple, FaArrowRight, FaCamera, FaGamepad, FaHeadphones, FaHeadset, FaPhone, FaTruck } from 'react-icons/fa'
 import { Index as ListCard } from '@/src/components/ListProduct'
 import { Index as ListCategory } from '@/src/components/ListCategory'
 import { Index as ListCardCompact } from '@/src/components/ListProductCompact'
@@ -8,8 +8,9 @@ import { Index as BannerDiscont } from '@/src/components/BannerProductBestDiscou
 import { Index as ListCardNotCompact } from '@/src/components/ListProductNotCompact'
 import { Index as NewArival } from '@/src/components/NewProductArrival'
 import { products } from '@/src/data/product'
-import { FaComputer } from 'react-icons/fa6'
-import { BsSmartwatch } from 'react-icons/bs'
+import { FaComputer, FaTruckFast } from 'react-icons/fa6'
+import { BsHeadset, BsShieldCheck, BsSmartwatch } from 'react-icons/bs'
+import { Index as Services } from '@/src/components/InfoServices'
 export default function HomePage() {
     return (
         <>
@@ -72,10 +73,15 @@ export default function HomePage() {
                     { name: "Headphones", Icon: FaHeadphones },
                     { name: "Gaming", Icon: FaGamepad }
                 ]} />
-                <ListCardCompact title={{ text: "This Month", subtext: "Best Selling Products" }} products={products} />
-                <BannerDiscont />
-                <ListCardNotCompact title={{text:"Our Products",subtext:"Explore Our Products"}} products={products} />
-                <NewArival title={{text:'Featured',subtext:'New Arrival'}} />
+            <ListCardCompact title={{ text: "This Month", subtext: "Best Selling Products" }} products={products} />
+            <BannerDiscont />
+            <ListCardNotCompact title={{ text: "Our Products", subtext: "Explore Our Products" }} products={products} />
+            <NewArival title={{ text: 'Featured', subtext: 'New Arrival' }} />
+            <section className='container flex items-center justify-around '>
+                <Services Icon={FaTruckFast} title={'FREE AND FAST DELIVERY'} subtitle='Free delivery for all orders over $140' />
+                <Services Icon={BsHeadset} title='24/7 CUSTOMER SERVICE' subtitle='Friendly 24/7 customer support' />
+                <Services Icon={BsShieldCheck} title='MONEY BACK GUARANTEE' subtitle='We reurn money within 30 days' />
+            </section>
         </>
     )
 }

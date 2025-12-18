@@ -38,7 +38,7 @@ export function Index({ data, indice }: Props) {
                         add to cart
                     </div>
                 </div>
-                <img className="w-44 h-40" src={image} alt={name} />
+                <img className="w-44 h-40 object-contain" src={image} alt={name} />
             </div>
             <div>
                 <h1 className="text-gray-900 font-semibold text-sm">

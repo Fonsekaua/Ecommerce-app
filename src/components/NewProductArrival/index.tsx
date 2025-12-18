@@ -7,7 +7,7 @@ type Props = {
 }
 export function Index({ title }: Props) {
     return (
-        <section className="container">
+        <section className="container pb-32">
             <div className="flex flex-col gap-6">
                 <TitleMini text={title.text} subtext={title.subtext} />
                 <div className="grid grid-cols-4 grid-rows-2 gap-6 h-[37.5rem] *:rounded-sm">
